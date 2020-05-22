@@ -41,6 +41,8 @@ I have done these points:
 
 2. Filter function - The Eclipse stopped working and I could not add the feature. 
 
+3. Also validations, error handlings, design (CSS) are not been done
+
 
 # sql
 <a href="interview.sql" target="_blank">Please click here to see the file</a>
