@@ -29,7 +29,6 @@ try {
     Class.forName("com.mysql.jdbc.Driver");
     String url = "jdbc:mysql://localhost:3306/interview";
     Connection connection = DriverManager.getConnection(url, "root", "");
-  //  out.println ("database successfully opened.");  
     PreparedStatement ps=(PreparedStatement)connection.prepareStatement("SELECT * from bets");
     ResultSet rs=ps.executeQuery();
     %>
@@ -37,12 +36,12 @@ try {
 <% 
  while(rs.next()){
  	String id=rs.getString("id");
-		String numbets=rs.getString("numbets");
-		String game=rs.getString("game");
-		String stake=rs.getString("stake");
-		String returns=rs.getString("returns");
-		String clientid=rs.getString("clientid");
-		String date=rs.getString("date");
+	String numbets=rs.getString("numbets");
+	String game=rs.getString("game");
+	String stake=rs.getString("stake");
+	String returns=rs.getString("returns");
+	String clientid=rs.getString("clientid");
+	String date=rs.getString("date");
 %>
 <tr>
 <td><% 	out.println(id); %><td>
@@ -61,10 +60,13 @@ try {
   }
 //out.println(request.getParameter("filelocation"));
 if(request.getParameter("filelocation") != null){
-  String db = request.getParameter("db");
+//  String db = request.getParameter("db");
   AddtoBets AddtoBetsInstance = new AddtoBets();
   AddtoBetsInstance.loadJSON(request.getParameter("filelocation"));
 
+  response.getWriter().println("<p style='color:green;'>The data is updated - please refresh the page.</p>");
+  
+  
 }
   
 %>

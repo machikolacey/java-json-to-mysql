@@ -11,16 +11,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.json.simple.JSONArray;
 import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Field;
 import com.mysql.jdbc.PreparedStatement;
-import java.math.BigDecimal;
+
 
 import org.json.simple.parser.JSONParser;
 
 public class AddtoBets {
-	
-
-
 	
 	public void loadJSON(String fileLocation) throws ClassNotFoundException, SQLException, JSONException {
 	    JSONParser parser = new JSONParser();
@@ -42,11 +38,12 @@ public class AddtoBets {
 	            	 long id = (long) record.get("id");
 	            	 long numbets = (long) record.get("numbets");
 	            	 String game = (String) record.get("game");
-	            	 long stake = (long) record.get("stake");	            	 
-	            	 long returns = (long) record.get("returns");
+	            	 double stake = Double.valueOf((Double) record.get("stake"));
+	            	 double returns = Double.valueOf((Double) record.get("returns"));
 	            	 long clientid = (long) record.get("clientid");
 	            	 String dateString = (String) record.get("date");
 	            	 long date = Date.valueOf(dateString).getTime();
+	            	 
 	            	 preparedStatement.setInt(1, (int) id);
 	            	 preparedStatement.setInt(2, (int) numbets);
 	            	 preparedStatement.setString(3, game);
@@ -56,11 +53,9 @@ public class AddtoBets {
 	            	 preparedStatement.setDate(7, new Date(date));
 	            	 preparedStatement.executeUpdate();
 	             }
-	             
-	             
+	                          
 	        }
 	
-
 	    } catch (FileNotFoundException e) {
 	        e.printStackTrace();
 	    } catch (IOException e) {
