@@ -19,10 +19,10 @@ Write a page that allows you to search this table with filters based on the foll
 <hr />
 
 
-##Screen Image:
+# Screen Image:
 <img src="interview-test.jpg" />
 
-##Existing Features
+# Existing Features
 
 I have done these points:
 -   Created a database table to store the data from the JSON data. Database - 'interview' Table - 'bets'
@@ -35,7 +35,7 @@ I have done these points:
 -   It iterates through the array and add the records into the 'bets' table
 -   When it's done it displays the message 'The data is updated - please refresh the page.'
 
-##Comments
+# Comments
 
 1. I have dropped the primary key from the bets table as the data has the "id" and there might be a case duplicate id will be permissive.
 
