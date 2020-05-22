@@ -1,8 +1,5 @@
 # java-json-to-mysql
 
-1x2network - interview task 
-
- 
 
 Overview: 
 
