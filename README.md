@@ -39,4 +39,8 @@ I have done these points:
 
 1. I have dropped the primary key from the bets table as the data has the "id" and there might be a case duplicate id will be permissive.
 
+2. Finter function - The Eclipse stopped working and I could not add the feature. 
 
+
+#sql file
+<a href="interview.sql" target="_blank">Please click here to download the file</a>
